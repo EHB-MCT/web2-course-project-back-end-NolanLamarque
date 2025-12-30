@@ -21,25 +21,30 @@ const client = new MongoClient(URI, {
   }
 });
 
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db(process.env.MONGO_NAME).command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
+// Syntax from MongoDB documentation and help from chatGPT [Source 1 in README section chatGPT + external links]
+let database;
+
+async function mongoConnection() {
+  await client.connect();
+  database = client.db(process.env.MONGO_NAME);
+  console.log("connected to MongoDB");
 }
-run().catch(console.dir);
+
+
 
 app.get('/', async (req, res) => {
     res.send("OK")
 })
 
 
+app.get('/birds', async (req, res) => {
+   const birdsData = await database.collection('birds').find().toArray();
+   res.json(birdsData);
+})
+
+mongoConnection()
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
+
