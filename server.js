@@ -42,6 +42,12 @@ app.get('/birds', async (req, res) => {
    res.json(birdsData);
 })
 
+app.get('/birds/:name', async (req, res) => {
+  const specificBird = req.params.name;
+  const birdsData = await database.collection('birds').find({name: specificBird}).toArray();
+  res.json(birdsData);
+})
+
 // Syntax from MongoDB documentation and help from chatGPT [Source 1 in README section chatGPT + external links]
 app.post('/saves', async (req, res) => {
   const newSave = req.body;
