@@ -1,5 +1,5 @@
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=22107439)
-# Your project name ✨
+# OrnithoClue (API) ✨
 This is the back-end section of my project. My whole project is a full stack website about ornithology (study of birds).
 This part is the API I'm using in the front-end section. The online database used for this API is on MongoDB. There's a bird and saves collection.
 The bird collection has text like a name and description and images like distribution map or an icon. The saves collection contains usernames and level number.
