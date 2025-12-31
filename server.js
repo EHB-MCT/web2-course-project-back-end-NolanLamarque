@@ -1,5 +1,5 @@
 // Information gathered from video tutorials available on Canvas
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
@@ -41,6 +41,14 @@ app.get('/birds', async (req, res) => {
    const birdsData = await database.collection('birds').find().toArray();
    res.json(birdsData);
 })
+
+// Syntax from MongoDB documentation and help from chatGPT [Source 1 in README section chatGPT + external links]
+app.post('/saves', async (req, res) => {
+  const newSave = req.body;
+  await database.collection('saves').insertOne(newSave);
+  res.json("New save created");
+})
+
 
 mongoConnection()
 
