@@ -1,22 +1,26 @@
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=22107439)
 # Your project name ✨
-A short description of your project. Aim for 2-3 lines. \
+This is the back-end section of my project. My whole project is a full stack website about ornithology (study of birds).
+This part is the API I'm using in the front-end section. The online database used for this API is on MongoDB. There's a bird and saves collection.
+The bird collection has text like a name and description and images like distribution map or an icon. The saves collection contains usernames and level number.
 
 Website url: [website.be](website.be) (optional)
 
-If you want to add more sections, please do so after the existing ones (avoid burying your sources under a lot of text!).
-
-## Up & running (optional) 🏃‍➡️
-This should contain step by step instructions to run your project (delete this section if it's not relevant). \
-Also include login credentials or other vital information if needed.
-
 ## Sources 🗃️
-List **ALL your used sources** here:
-- Used a tutorial or example code? Place a link to them here. (youtube, website, github, ...) and **list the files in which they were used**.
-- Used ChatGPT? Generate a ChatGPT share link: options (three dots) > share and **list the files in which it was used**. This will not work if you have uploaded images in your prompt. In that case, add screenshots instead.
 
-It's not enough to only list the sources here, also add the sources to the top of the files in which you used them and indicate the specific parts of the code which are not your own (by writing comments and refering to the correct source(s)). \
-IF you use a source as the base/start for a file, then first place the source in the file and **COMMIT it IMMEDIATELY, BEFORE** adding your own code or modifying it. \
-**ALWAYS** use concise BUT CLEAR commit messages!
+#### External Links
 
-Have a look at the example repository: https://github.com/EHB-MCT/example-readme
+Source 1: [MongoDB Documentation](https://www.mongodb.com/docs/manual/crud/)
+
+Used in [server.js where I mentionned it](server.js) to understand syntax for how to post, get, put data (like "updateOne()", "find()", etc...) on MongoDB Cloud Database.
+
+Source 2: [Mike's YouTube tutorial livestream from 26/11](https://www.youtube.com/live/_OFH6RX9G4s?si=MGzydzvIfGcRzlgx) 
+
+I used it in [server.js where I mentionned it](server.js) and I mainly used the video for information about structure, how to host the project and what we needed to install for our course project.
+
+
+#### ChatGPT
+
+Source 1: [ChatGPT CRUD conversation](https://chatgpt.com/share/6955ab6f-f810-8001-85f0-0b4b5424e4f5)
+
+I used it in [server.js where I mentionned it ](server.js), mainly to get an exmaple of a CRUD endpoint that is correct for MongoDB and to fix a connection problem to MongoDB I encountered.
