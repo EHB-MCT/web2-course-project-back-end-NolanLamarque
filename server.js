@@ -58,6 +58,14 @@ app.put('/saves/:username', async (req, res) => {
 
 })
 
+// Syntax from MongoDB documentation
+app.delete('/saves/:username', async (req, res) => {
+  const name = req.params.username;
+  const deleteSave = req.body;
+  await database.collection('saves').deleteOne({username: name}, {$set: deleteSave})
+  res.json("Delete succesful");
+
+})
 
 mongoConnection()
 
