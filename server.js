@@ -36,7 +36,7 @@ app.get('/', async (req, res) => {
     res.send("OK")
 })
 
-
+// Syntax from MongoDB documentation and help from chatGPT for "toArray()" part, [Source 1 in README section chatGPT + external links]
 app.get('/birds', async (req, res) => {
    const birdsData = await database.collection('birds').find().toArray();
    res.json(birdsData);
@@ -47,6 +47,15 @@ app.post('/saves', async (req, res) => {
   const newSave = req.body;
   await database.collection('saves').insertOne(newSave);
   res.json("New save created");
+})
+
+// Syntax from MongoDB documentation and help from chatGPT for the structure and information, [Source 1 in README section chatGPT + external links]
+app.put('/saves/:username', async (req, res) => {
+  const name = req.params.username;
+  const saveUpdate = req.body;
+  await database.collection('saves').updateOne({username: name}, { $set: saveUpdate});
+  res.json("Save updated");
+
 })
 
 
