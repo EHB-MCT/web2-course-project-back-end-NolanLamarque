@@ -1,4 +1,4 @@
-// Information gathered from video tutorials available on Canvas
+// Information gathered from video tutorials available on Canvas [Source 2 in external links section in README]
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const express = require('express');
 const cors = require('cors');
