@@ -6,7 +6,7 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 const URI = process.env.MONGO_URI;
 
 app.use(express.json())
@@ -83,7 +83,15 @@ app.delete('/saves/:username', async (req, res) => {
 
 mongoConnection()
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+// // Information gathered from video tutorials available on Canvas [Source 2 in external links section in README]
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log('Endpoints:');
+  console.log(' GET/birds           -Get all birds');
+  console.log(' GET/birds:name      -Get birds by name');
+  console.log(' GET/saves/:username -Get profile by username');
+  console.log(' POST/saves          -Create new profile with username and level number');
+  console.log(' PUT/saves           -Update savedata');
+  console.log(' DELETE/saves        -Delete a profile and its savedata');
 })
 
