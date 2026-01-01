@@ -2,6 +2,7 @@
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -33,7 +34,8 @@ async function mongoConnection() {
 
 
 app.get('/', async (req, res) => {
-    res.send("Welcome to the OrnithoClue API!")
+  // Information gathered from video tutorials available on Canvas [Source 2 in external links section in README]
+    res.sendFile(path.join(__dirname, 'index.html'));
 })
 
 // Syntax from MongoDB documentation and help from chatGPT for "toArray()" part, [Source 1 in README section chatGPT + external links]
