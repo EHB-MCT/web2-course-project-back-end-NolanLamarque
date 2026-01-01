@@ -33,7 +33,7 @@ async function mongoConnection() {
 
 
 app.get('/', async (req, res) => {
-    res.send("OK")
+    res.send("Welcome to the OrnithoClue API!")
 })
 
 // Syntax from MongoDB documentation and help from chatGPT for "toArray()" part, [Source 1 in README section chatGPT + external links]
